@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Data: images are not redistributed (see data/README.md); only the split manifest is tracked
+data/*
+!data/README.md
+!data/splits.csv
+
+# Intermediate checkpoints and caches
+models/*.ckpt
+*.tmp
+.streamlit/secrets.toml

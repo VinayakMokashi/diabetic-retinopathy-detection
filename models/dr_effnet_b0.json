@@ -1,0 +1,69 @@
+{
+  "arch": "efficientnet_b0.ra_in1k",
+  "image_size": 384,
+  "mean": [
+    0.5028,
+    0.5019,
+    0.5017
+  ],
+  "std": [
+    0.0636,
+    0.0735,
+    0.0509
+  ],
+  "thresholds": [
+    0.775,
+    1.4,
+    2.6,
+    3.025
+  ],
+  "grades": {
+    "0": "No DR",
+    "1": "Mild NPDR",
+    "2": "Moderate NPDR",
+    "3": "Severe NPDR",
+    "4": "Proliferative DR"
+  },
+  "best_epoch": 9,
+  "val_metrics": {
+    "n_images": 411,
+    "quadratic_kappa": 0.737706892553396,
+    "accuracy": 0.49635036496350365,
+    "macro_f1": 0.5119118131078444,
+    "within_one_grade": 0.9099756690997567,
+    "per_grade_recall": [
+      0.5631067961165048,
+      0.41818181818181815,
+      0.47474747474747475,
+      0.4393939393939394,
+      0.7272727272727273
+    ],
+    "referable_auc": 0.8757528334993124,
+    "referable_sensitivity": 0.7575757575757576,
+    "referable_specificity": 0.8591549295774648,
+    "any_dr_auc": 0.7477304249148911
+  },
+  "train_args": {
+    "arch": "efficientnet_b0.ra_in1k",
+    "size": "384",
+    "data": "None",
+    "splits": "data\\splits.csv",
+    "epochs": "20",
+    "batch_size": "16",
+    "lr": "0.0003",
+    "weight_decay": "0.01",
+    "label_smoothing": "0.05",
+    "drop_rate": "0.3",
+    "warmup_epochs": "1.0",
+    "workers": "2",
+    "threads": "8",
+    "seed": "42",
+    "out": "models\\dr_effnet_b0.pt",
+    "log": "None",
+    "limit": "None",
+    "grad_checkpointing": "True"
+  },
+  "timm_version": "1.0.31",
+  "torch_version": "2.12.1+cpu",
+  "created": "2026-11-25T18:20:37+00:00"
+}

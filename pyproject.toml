@@ -1,0 +1,16 @@
+[project]
+name = "diabetic-retinopathy-detection"
+version = "1.0.0"
+description = "Diabetic retinopathy grading (ICDR 0-4) from colour fundus photographs with a fine-tuned EfficientNet"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools]
+packages = ["dr"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+# On Windows, PyTorch's CPU kernels raise access violations that they catch themselves; pytest's faulthandler
+# still prints each one as a "fatal exception" although nothing crashed. Turn it off to keep the output readable.
+addopts = "-p no:faulthandler"
